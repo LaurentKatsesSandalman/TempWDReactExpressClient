@@ -1,5 +1,4 @@
-interface EmployeeCardProps {
-  employee: {
+interface Employee {
     name: {
       first: string;
       last: string;
@@ -8,12 +7,15 @@ interface EmployeeCardProps {
     picture: {
       medium: string;
     };
-  };
+}
+
+interface EmployeeCardProps {
+  employee: Employee;
 }
 
 function EmployeeCard({ employee }: EmployeeCardProps) {
   return (
-    <figure className='DisplayEmployee'>
+    <figure className='displayEmployee'>
       <img src={employee.picture.medium} alt={employee.name.first} />
       <figcaption>
         <strong>{employee.name.first} {employee.name.last}</strong>
